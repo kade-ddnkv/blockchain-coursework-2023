@@ -27,9 +27,9 @@
   
 **Запуск приложения:**
 1. поставить адреса CrtAddress и CrsAddress в front/src/addresses/contractAddresses на адрес CockroachToken и CockroachStaking соответственно.
-2. cd front
-3. yarn install (а нужно ли?)
-4. yarn dev
+2. `cd front`
+3. `yarn install` (а нужно ли?)
+4. `yarn dev`
 5. Добавить в метамаске сеть локального блокчейна, адрес которй был получен на шаге 2.
 6. В браузере зайти на адрес, полученный на шаге 11, использовать приложение.
 
