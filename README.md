@@ -9,19 +9,20 @@
 Просто потому, что я так написал в смарт-контракте. 
 
 
-## Инструкция по запуску приложения на локальном блокчейне.
+## Инструкция по запуску приложения на локальном блокчейне
 
 **Запуск локального блокчейна:**
 1. `yarn install`
 2. `yarn hardhat node`
 3. `yarn hardhat run scripts/deployCockroachToken.js --network localhost`
 
-4. изменить в коде contracts/CockroachStaking.sol адрес в переменной token на тот, что был получен на шаге 3.
+4. изменить в коде contracts/CockroachStaking.sol адрес в переменной token 
+на тот, что был получен на шаге 3.
 5. `yarn hardhat run scripts/deployCockroachStaking.js --network localhost`
 
-6.1. изменить в коде scripts/initTransferTokens.js адрес в переменной recipient на адрес вашего метамаск-кошелька
-6.2. изменить в коде scripts/initTransferTokens.js адрес в переменной CrtAddress на адрес из шага 3.
-6.3. изменить в коде scripts/initTransferTokens.js адрес в переменной CrsAddress на адрес из шага 4.
+6. 1. изменить в коде scripts/initTransferTokens.js адрес в переменной recipient на адрес вашего метамаск-аккаунта
+6. 2. изменить в коде scripts/initTransferTokens.js адрес в переменной CrtAddress на адрес из шага 3.
+6. 3. изменить в коде scripts/initTransferTokens.js адрес в переменной CrsAddress на адрес из шага 4.
 
 7. `yarn hardhat run scripts/initTransferTokens.js --network localhost` - это добавит некоторое кол-во токенов на счет контракта CockroachStaking и на счет аккаунта в метамаске. 
 
@@ -36,10 +37,17 @@
 
 ## Тестрование
 
-Ни формального тестирования, ни юнит-тестирования не было.
+Ни формального тестирования, ни юнит-тестирования не было.  
 Но проверку на дурака я сделал.
 
 
 ## Что делать дальше?
 * обновляемый смарт-контракт (только через прокси, а не через фактори)
 * динамический, а не статический стейкинг
+
+
+## Пара скриншотов
+
+![1](./screenshots/1.jpg)
+![2](./screenshots/2.jpg)
+![3](./screenshots/3.jpg)
