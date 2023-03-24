@@ -15,24 +15,23 @@
 1. `yarn install`
 2. `yarn hardhat node`
 3. `yarn hardhat run scripts/deployCockroachToken.js --network localhost`
-
-4. изменить в коде contracts/CockroachStaking.sol адрес в переменной token 
-на тот, что был получен на шаге 3.
+  
+4. изменить в коде contracts/CockroachStaking.sol адрес в переменной token на полученый на шаге 3.
 5. `yarn hardhat run scripts/deployCockroachStaking.js --network localhost`
-
-6. 1. изменить в коде scripts/initTransferTokens.js адрес в переменной recipient на адрес вашего метамаск-аккаунта
-6. 2. изменить в коде scripts/initTransferTokens.js адрес в переменной CrtAddress на адрес из шага 3.
-6. 3. изменить в коде scripts/initTransferTokens.js адрес в переменной CrsAddress на адрес из шага 4.
-
-7. `yarn hardhat run scripts/initTransferTokens.js --network localhost` - это добавит некоторое кол-во токенов на счет контракта CockroachStaking и на счет аккаунта в метамаске. 
-
+  
+6. изменить в коде scripts/initTransferTokens.js адрес в переменной recipient на адрес вашего метамаск-аккаунта
+7. изменить в коде scripts/initTransferTokens.js адрес в переменной CrtAddress на адрес из шага 3.
+8. изменить в коде scripts/initTransferTokens.js адрес в переменной CrsAddress на адрес из шага 4.
+  
+9. `yarn hardhat run scripts/initTransferTokens.js --network localhost` - это добавит некоторое кол-во токенов на счет контракта CockroachStaking и на счет аккаунта в метамаске. 
+  
 **Запуск приложения:**
-8. поставить адреса CrtAddress и CrsAddress в front/src/addresses/contractAddresses на адрес CockroachToken и CockroachStaking соответственно.
-9. cd front
-10. yarn install (а нужно ли?)
-11. yarn dev
-12. Добавить в метамаске сеть локального блокчейна, адрес которй был получен на шаге 2.
-13. В браузере зайти на адрес, полученный на шаге 11, использовать приложение.
+10. поставить адреса CrtAddress и CrsAddress в front/src/addresses/contractAddresses на адрес CockroachToken и CockroachStaking соответственно.
+11. cd front
+12. yarn install (а нужно ли?)
+13. yarn dev
+14. Добавить в метамаске сеть локального блокчейна, адрес которй был получен на шаге 2.
+15. В браузере зайти на адрес, полученный на шаге 11, использовать приложение.
 
 
 ## Тестрование
