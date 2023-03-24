@@ -26,12 +26,12 @@
 9. `yarn hardhat run scripts/initTransferTokens.js --network localhost` - это добавит некоторое кол-во токенов на счет контракта CockroachStaking и на счет аккаунта в метамаске. 
   
 **Запуск приложения:**
-10. поставить адреса CrtAddress и CrsAddress в front/src/addresses/contractAddresses на адрес CockroachToken и CockroachStaking соответственно.
-11. cd front
-12. yarn install (а нужно ли?)
-13. yarn dev
-14. Добавить в метамаске сеть локального блокчейна, адрес которй был получен на шаге 2.
-15. В браузере зайти на адрес, полученный на шаге 11, использовать приложение.
+1. поставить адреса CrtAddress и CrsAddress в front/src/addresses/contractAddresses на адрес CockroachToken и CockroachStaking соответственно.
+2. cd front
+3. yarn install (а нужно ли?)
+4. yarn dev
+5. Добавить в метамаске сеть локального блокчейна, адрес которй был получен на шаге 2.
+6. В браузере зайти на адрес, полученный на шаге 11, использовать приложение.
 
 
 ## Тестрование
