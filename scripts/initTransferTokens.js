@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 async function main() {
   const fs = require('fs');
 
-  const CrtAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+  const CrtAddress = process.env.CrtAddress;
   const CrtABI = JSON.parse(fs.readFileSync('scripts/contracts_abi/CockroachTokenABI.json'));
 
   const contract = new ethers.Contract(CrtAddress, CrtABI, ethers.provider);
@@ -9,7 +11,7 @@ async function main() {
   
 
   // первая транзакция - перевести токены пользователю из метамаска
-  const recipient = "0x49580F79775cc5eB7969EB8B52E08FF259a28cC7";
+  const recipient = process.env.init_recipient;
   let tx = await contract.connect(signer).transfer(recipient, 50);
   
   let receipt = await tx.wait();
@@ -18,7 +20,7 @@ async function main() {
   
   
   // вторая транзакция - перевести токены смарт-контракту для стейкинга
-  const CrsAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
+  const CrsAddress = process.env.CrsAddress;
   tx = await contract.connect(signer).transfer(CrsAddress, 50);
 
   receipt = await tx.wait();

@@ -3,14 +3,21 @@ pragma solidity ^0.8.18;
 
 // import "hardhat/console.sol";
 
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
-import "@openzeppelin/contracts/utils/math/SafeMath.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC20/utils/SafeERC20Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/utils/math/SafeMathUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
-contract CockroachStaking is Ownable {
-    using SafeMath for uint;
-    using SafeERC20 for IERC20;
+contract CockroachStaking is OwnableUpgradeable {
+    using SafeMathUpgradeable for uint;
+    using SafeERC20Upgradeable for IERC20Upgradeable;
+
+    function initialize(address crtAddress) public initializer {
+        __Ownable_init();
+        durationOfStake = 60;
+        addedPercent = 30;
+        token = crtAddress;
+    }
 
     struct Stake {
         uint amount;
@@ -19,11 +26,12 @@ contract CockroachStaking is Ownable {
         bool received;
     }
 
-    address token = 0x5FbDB2315678afecb367f032d93F642f64180aa3;
+    // адрес токена
+    address public token;
 
     // timestamp измеряется в секундах с эпохи Юникса
-    uint durationOfStake = 60;
-    uint addedPercent = 30;
+    uint public durationOfStake;
+    uint public addedPercent;
 
     // mapping доступен только в storage
     // если захочется сделать его в memory,
@@ -33,15 +41,15 @@ contract CockroachStaking is Ownable {
     function stakeTokens(uint amount) public returns (uint stakeEndTime) {
         require(amount >= 0, "stake amount should be greater than zero");
         require(
-            amount <= IERC20(token).balanceOf(msg.sender),
+            amount <= IERC20Upgradeable(token).balanceOf(msg.sender),
             "you do not have enough tokens to stake this amount"
         );
         require(
-            amount <= IERC20(token).allowance(msg.sender, address(this)),
+            amount <= IERC20Upgradeable(token).allowance(msg.sender, address(this)),
             "this contract has not been allowed to use this amount of your tokens, call approve or increaseAllowance first"
         );
 
-        IERC20(token).safeTransferFrom(msg.sender, address(this), amount);
+        IERC20Upgradeable(token).safeTransferFrom(msg.sender, address(this), amount);
 
         stakes[msg.sender].push() = Stake({
             amount: amount,
@@ -78,7 +86,7 @@ contract CockroachStaking is Ownable {
             revert('you have not staked anything yet');
         }
 
-        IERC20(token).safeTransfer(msg.sender, receivedTokensAmount);
+        IERC20Upgradeable(token).safeTransfer(msg.sender, receivedTokensAmount);
 
         return receivedTokensAmount;
     }

@@ -19,18 +19,16 @@
 4. изменить в коде contracts/CockroachStaking.sol адрес в переменной token на полученый на шаге 3.
 5. `yarn hardhat run scripts/deployCockroachStaking.js --network localhost`
   
-6. изменить в коде scripts/initTransferTokens.js адрес в переменной recipient на адрес вашего метамаск-аккаунта
-7. изменить в коде scripts/initTransferTokens.js адрес в переменной CrtAddress на адрес из шага 3.
-8. изменить в коде scripts/initTransferTokens.js адрес в переменной CrsAddress на адрес из шага 4.
+6. изменить в файле .env следующие переменные: CrtAddress (контракт токена), CrsAddress (контракт для стейкинга), init_recipient (адрес вашего метамаск-аккаунта)
   
-9. `yarn hardhat run scripts/initTransferTokens.js --network localhost` - это добавит некоторое кол-во токенов на счет контракта CockroachStaking и на счет аккаунта в метамаске. 
+7. `yarn hardhat run scripts/initTransferTokens.js --network localhost` - это добавит некоторое кол-во токенов на счет контракта CockroachStaking и на счет аккаунта в метамаске. 
   
 **Запуск приложения:**
 1. поставить адреса CrtAddress и CrsAddress в front/src/addresses/contractAddresses на адрес CockroachToken и CockroachStaking соответственно.
 2. `cd front`
 3. `yarn install` (а нужно ли?)
 4. `yarn dev`
-5. Добавить в метамаске сеть локального блокчейна, адрес которй был получен на шаге 2.
+5. Добавить в метамаске сеть локального блокчейна, адрес которй был получен на шаге 2. Переключиться на эту сеть.
 6. В браузере зайти на адрес, полученный на шаге 11, использовать приложение.
 
 

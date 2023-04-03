@@ -3,11 +3,14 @@ pragma solidity ^0.8.18;
 
 // import "hardhat/console.sol";
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
-contract CockroachToken is ERC20, Ownable {
-    constructor(uint256 initialSupply) ERC20("CockroachToken", "CRT") {
+contract CockroachToken is Initializable, ERC20Upgradeable, OwnableUpgradeable {
+    function initialize(uint256 initialSupply) public initializer {
+        __ERC20_init("CockroachToken", "CRT");
+        __Ownable_init();
         mint(msg.sender, initialSupply);
     }
 
