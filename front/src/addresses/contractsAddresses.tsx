@@ -1,2 +1,2 @@
-export const CrtAddress = '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0';
-export const CrsAddress = '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9';
+export const CrtAddress = '0x2a05Cc6521a6c98242A97716be968FA945AA2F00';
+export const CrsAddress = '0xa7583195B1504907F962eb09B5dEdfd60c81d7d9';
