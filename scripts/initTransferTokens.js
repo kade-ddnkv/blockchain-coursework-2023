@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: `.env.public` });
 
 async function main() {
   const fs = require('fs');
