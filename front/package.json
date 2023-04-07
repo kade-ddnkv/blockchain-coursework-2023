@@ -16,12 +16,10 @@
     "@types/node": "18.15.5",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
-    "ethers": "^6.2.3",
-    "net": "^1.0.2",
+    "ethers": "5.7.2",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tls": "^0.0.1",
     "typescript": "5.0.2"
   }
 }

@@ -5,7 +5,8 @@ import { Button, TextField } from '@mui/material';
 import { styled } from '@mui/system';
 import { AppContext } from '../hooks/AppContext';
 import { CrtAddress, CrsAddress } from '../addresses/contractsAddresses';
-import ethers from 'ethers';
+
+const ethers = require('ethers');
 
 const StyledOutlinedButton = styled(Button)({
   borderRadius: 0,
