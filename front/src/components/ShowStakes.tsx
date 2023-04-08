@@ -138,11 +138,9 @@ export default function ShowStakes({ account }) {
 
   const [stakes, setStakes] = useState([]);
 
-  const [hereWasError, setHereWasError] = useState(false);
-
+  // Это нужно потому, что ErrorBoundary не ловит исключения из асинхронного кода.
   const [error, setError] = useState(null);
-  if (error && !hereWasError) {
-    setHereWasError(true)
+  if (error) {
     throw error;
   }
 
