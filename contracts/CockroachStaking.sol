@@ -31,6 +31,7 @@ contract CockroachStaking is OwnableUpgradeable {
 
     // timestamp измеряется в секундах с эпохи Юникса
     uint public durationOfStake;
+    // addedPercent измеряется в процентах (число 30 - добавляется 30%).
     uint public addedPercent;
 
     // mapping доступен только в storage
@@ -93,5 +94,15 @@ contract CockroachStaking is OwnableUpgradeable {
 
     function checkStakesOf(address user) public view returns (Stake[] memory) {
         return stakes[user];
+    }
+
+    function changeDurationOfStake(uint newDuration) public onlyOwner {
+        require(newDuration > 0, "duration should be strictly greater than zero");
+        durationOfStake = newDuration;
+    }
+
+    function changeAddedPercent(uint newPercent) public onlyOwner {
+        require(newPercent > 0, "added percent should be strictly greater than zero");
+        addedPercent = newPercent;
     }
 }

@@ -6,7 +6,7 @@ const ethers = require('ethers');
 
 declare let window: any;
 
-export default function BalanceOfCrt({ account }) {
+export default function BalanceOfCrt({ account, chainId }) {
   const { tokenBalanceChanged, setTokenBalanceChanged } = useContext(AppContext);
 
   const [balance, setBalance] = useState<number>();
@@ -20,12 +20,12 @@ export default function BalanceOfCrt({ account }) {
       .then((result: string) => {
         setBalance(Number(result))
       })
-      .catch('error', console.error)
+      .catch(error => { console.log(error) })
 
-    // Тут я намотал велосипед конечно, но эта строка нужна, 
+    // Тут я намотал велосипед, конечно, но эта строка нужна, 
     // чтобы при вызове setTokenBalanceChanged откуда-нибудь прогружались оба BalanceOfCrt и ShowStakes.
     setTokenBalanceChanged(true)
-  }, [tokenBalanceChanged])
+  }, [tokenBalanceChanged, account, chainId])
 
   return <>{balance}</>
 }

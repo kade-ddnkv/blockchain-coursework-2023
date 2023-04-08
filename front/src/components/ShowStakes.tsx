@@ -81,7 +81,7 @@ const beautifyDateTimeString = (date: Date) => {
 
 const CountdownTimerAndReward = ({ endTime, claimed }) => {
   const [seconds] = useCountdown(endTime);
-  
+
   const { tokenBalanceChanged, setTokenBalanceChanged } = useContext(AppContext);
 
   async function receiveTokens() {
@@ -138,6 +138,14 @@ export default function ShowStakes({ account }) {
 
   const [stakes, setStakes] = useState([]);
 
+  const [hereWasError, setHereWasError] = useState(false);
+
+  const [error, setError] = useState(null);
+  if (error && !hereWasError) {
+    setHereWasError(true)
+    throw error;
+  }
+
   useEffect(() => {
     if (!window.ethereum) return;
     if (!account) return;
@@ -155,7 +163,10 @@ export default function ShowStakes({ account }) {
         })
         setStakes(stakes)
       })
-      .catch('error', console.error)
+      .catch(error => {
+        console.log(error)
+        setError(error)
+      })
 
     setTokenBalanceChanged(false)
   }, [tokenBalanceChanged])

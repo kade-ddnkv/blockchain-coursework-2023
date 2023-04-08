@@ -100,6 +100,7 @@ const App = () => {
     account: string | null;
     status: string;
     balance: string | null;
+    chainId: string;
   };
 
   // const {
@@ -129,8 +130,10 @@ const App = () => {
           method: "eth_getBalance",
           params: [accounts[0], "latest"],
         });
-        setState({ account: accounts[0], balance: balance, status: 'connected' } as State);
-        // dispatch({ type: "connect", wallet: accounts[0], balance });
+        const chainId = await window.ethereum!.request({
+          method: "eth_chainId"
+        });
+        setState({ account: accounts[0], balance: balance, status: 'connected', chainId: chainId } as State);
         useListen();
       } else {
         setState({ status: 'disconnected' } as State);
@@ -149,8 +152,10 @@ const App = () => {
           method: "eth_getBalance",
           params: [accounts[0], "latest"],
         });
-        setState({ account: accounts[0], balance: balance, status: 'connected' } as State);
-        // dispatch({ type: "connect", wallet: accounts[0], balance });
+        const chainId = await window.ethereum!.request({
+          method: "eth_chainId"
+        });
+        setState({ account: accounts[0], balance: balance, status: 'connected', chainId: chainId } as State);
         useListen();
       } else {
         setState({ status: 'disconnected' } as State);
@@ -166,6 +171,9 @@ const App = () => {
 
   async function useListen() {
     window.ethereum.on('accountsChanged', async () => {
+      passiveMetamaskConnection();
+    });
+    window.ethereum.on('chainChanged', (chainId: string) => {
       passiveMetamaskConnection();
     });
     window.ethereum.on('connect', async () => {
@@ -203,7 +211,7 @@ const App = () => {
         {state.status === 'connected'
           ? <AccountDiv>
             <Typography component='div'><Box fontWeight='bold' display='inline'>ACCOUNT:</Box> {state.account}</Typography>
-            <Typography component='div'><Box fontWeight='bold' display='inline'>CockroachTokens:</Box> <BalanceOfCrt account={state.account} /></Typography>
+            <Typography component='div'><Box fontWeight='bold' display='inline'>CockroachTokens:</Box> <BalanceOfCrt account={state.account} chainId={state.chainId} /></Typography>
           </AccountDiv>
           : <AccountDiv>
             <Typography color='transparent' component='div'><Box fontWeight='bold' display='inline'>Here</Box> will be an account</Typography>
