@@ -110,6 +110,11 @@ const App = () => {
 
   const [state, setState] = useState<State>({ isMetamaskInstalled: false } as State);
 
+  const [error, setError] = useState(false);
+  if (error) {
+    throw error;
+  }
+
   function isMetamaskInstalled() {
     return Boolean(window.ethereum && window.ethereum.isMetaMask);
   }
@@ -139,6 +144,7 @@ const App = () => {
         setState({ status: 'disconnected' } as State);
       }
     } else {
+      setError(true);
       setState({ isMetamaskInstalled: false } as State);
     }
   }
