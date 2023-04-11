@@ -47,6 +47,32 @@
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "newPercent",
+				"type": "uint256"
+			}
+		],
+		"name": "changeAddedPercent",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "newDuration",
+				"type": "uint256"
+			}
+		],
+		"name": "changeDurationOfStake",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "user",
 				"type": "address"
