@@ -307,6 +307,298 @@
           }
         }
       }
+    },
+    "5ce9d0748e50855cfd3055aa957caa127373beb521208f929e8c4f2b864e2d89": {
+      "address": "0x14E812Db5247E9Eee2fAfC9ba1278aC822B1300F",
+      "txHash": "0xa44a09046dabf0fba7dc8c00dbeabbff68d4a5b72aff090fd89f33683a4a53be",
+      "layout": {
+        "solcVersion": "0.8.18",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "token",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "CockroachStaking",
+            "src": "contracts\\CockroachStaking.sol:30"
+          },
+          {
+            "label": "durationOfStake",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_uint256",
+            "contract": "CockroachStaking",
+            "src": "contracts\\CockroachStaking.sol:34"
+          },
+          {
+            "label": "addedPercent",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_uint256",
+            "contract": "CockroachStaking",
+            "src": "contracts\\CockroachStaking.sol:38"
+          },
+          {
+            "label": "stakes",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_mapping(t_address,t_array(t_struct(Stake)1380_storage)dyn_storage)",
+            "contract": "CockroachStaking",
+            "src": "contracts\\CockroachStaking.sol:43"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_struct(Stake)1380_storage)dyn_storage": {
+            "label": "struct CockroachStaking.Stake[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_array(t_struct(Stake)1380_storage)dyn_storage)": {
+            "label": "mapping(address => struct CockroachStaking.Stake[])",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Stake)1380_storage": {
+            "label": "struct CockroachStaking.Stake",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "startTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "endTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "received",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "75411022fd7d6b8e0d39ba17e5c64eba9a9163f85a0a146779b86991d14eb6bb": {
+      "address": "0xeEeB4A39745bF8F09dF5B813Ff280828e1214E6F",
+      "txHash": "0x8314b185f9eb08f4aeeaf1676dc07ee6cf02cfb718a051064ab29f4b302aab43",
+      "layout": {
+        "solcVersion": "0.8.18",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "token",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "CockroachStaking",
+            "src": "contracts\\CockroachStaking.sol:30"
+          },
+          {
+            "label": "durationOfStake",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_uint256",
+            "contract": "CockroachStaking",
+            "src": "contracts\\CockroachStaking.sol:34"
+          },
+          {
+            "label": "addedPercent",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_uint256",
+            "contract": "CockroachStaking",
+            "src": "contracts\\CockroachStaking.sol:38"
+          },
+          {
+            "label": "stakes",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_mapping(t_address,t_array(t_struct(Stake)1380_storage)dyn_storage)",
+            "contract": "CockroachStaking",
+            "src": "contracts\\CockroachStaking.sol:43"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_struct(Stake)1380_storage)dyn_storage": {
+            "label": "struct CockroachStaking.Stake[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_array(t_struct(Stake)1380_storage)dyn_storage)": {
+            "label": "mapping(address => struct CockroachStaking.Stake[])",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Stake)1380_storage": {
+            "label": "struct CockroachStaking.Stake",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "startTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "endTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "received",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
     }
   }
 }

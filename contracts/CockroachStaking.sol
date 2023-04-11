@@ -40,7 +40,7 @@ contract CockroachStaking is OwnableUpgradeable {
     mapping(address => Stake[]) private stakes;
 
     function stakeTokens(uint amount) public returns (uint stakeEndTime) {
-        require(amount >= 0, "stake amount should be greater than zero");
+        require(amount > 0, "stake amount should be greater than zero");
         require(
             amount <= IERC20Upgradeable(token).balanceOf(msg.sender),
             "you do not have enough tokens to stake this amount"
